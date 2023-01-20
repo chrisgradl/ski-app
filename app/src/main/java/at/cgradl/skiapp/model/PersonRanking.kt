@@ -10,4 +10,4 @@ data class PersonRanking(
     val NationCC3: String,
     val NationImage: String,
     val Value: Int
-)
+): java.io.Serializable

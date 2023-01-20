@@ -57,11 +57,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    fun openDetailScreen(personRanking: PersonRanking) {
+    private fun openDetailScreen(personRanking: PersonRanking) {
         val intent = Intent(this, AthletActivity::class.java)
+        intent.putExtra("PersonRanking", personRanking)
         startActivity(intent)
-
-
     }
 }
 

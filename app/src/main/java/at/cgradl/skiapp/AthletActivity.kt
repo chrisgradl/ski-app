@@ -10,16 +10,21 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import at.cgradl.skiapp.model.PersonRanking
 import at.cgradl.skiapp.ui.theme.SkiAppTheme
 
 class AthletActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val personRanking = this.intent.getSerializableExtra("PersonRanking") as PersonRanking
         setContent {
             SkiAppTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-                    Greeting2("Android")
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    Greeting2("${personRanking.FirstName} ${personRanking.LastName}")
                 }
             }
         }
